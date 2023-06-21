@@ -1,0 +1,15 @@
+---
+# sysrc requires community.general v2.5.9
+
+- name: FreeBSD | Install Apache24
+  community.general.pkgng:
+    name: apache24
+    state: latest
+  notify: Restart apache
+
+- name: FreeBSD | Enable Apache24
+  community.general.sysrc:
+    name: apache24_enable
+    value: "YES"
+  notify: Restart apache
+

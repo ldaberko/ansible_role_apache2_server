@@ -1,0 +1,6 @@
+---
+# handlers file for apache2_server#
+- name: Restart apache
+  ansible.builtin.service:
+    name: apache24
+    state: restarted
