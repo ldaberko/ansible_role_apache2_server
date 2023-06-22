@@ -5,11 +5,10 @@
   community.general.pkgng:
     name: apache24
     state: latest
-  notify: Restart apache
+  notify: Restart FreeBSD Apache
 
 - name: FreeBSD | Enable Apache24
   community.general.sysrc:
     name: apache24_enable
     value: "YES"
-  notify: Restart apache
-
+  notify: Restart FreeBSD Apache

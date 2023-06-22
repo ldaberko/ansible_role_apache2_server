@@ -9,13 +9,4 @@
     name: apache2
     enabled: true
     state: started
-  notify: Restart apache
-
-#- name: Ubuntu | Install msmtp configuration file
-#  ansible.builtin.template:
-#    src: msmtprc.j2
-#    dest: /etc/msmtprc
-#    owner: root
-#    group: msmtp
-#   mode: '0640'
-#   backup: true
+  notify: Restart Ubuntu Apache
