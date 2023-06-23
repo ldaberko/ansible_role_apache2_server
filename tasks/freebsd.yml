@@ -1,6 +1,4 @@
 ---
-# sysrc requires community.general v2.5.9
-
 - name: FreeBSD | Install Apache24
   community.general.pkgng:
     name: apache24
@@ -8,7 +6,8 @@
   notify: Restart FreeBSD Apache
 
 - name: FreeBSD | Enable Apache24
-  community.general.sysrc:
-    name: apache24_enable
-    value: "YES"
+  ansible.builtin.service:
+    name: apache24
+    enabled: true
+    state: started
   notify: Restart FreeBSD Apache
